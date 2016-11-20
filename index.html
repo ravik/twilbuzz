@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>PhoneBuzz</title>
+
+	<link rel="stylesheet" href="assets/demo.css">
+	<link rel="stylesheet" href="assets/form-mini.css">
+
+</head>
+
+    <div class="main-content">
+
+        <!-- You only need this form and the form-mini.css -->
+
+        <div class="form-mini-container">
+
+			<br>
+			<br>
+			<h2>Call +1.240.439.8086<h2>
+			<h2>or fill out the form<h2>
+            <h2>to get called</h1>
+
+            <form class="form-mini" method="post" onsubmit="javascript:formSubmit()">
+				
+                <div class="form-row">
+                    <input type="number" name="number" placeholder="Your Number">
+                </div>
+
+                <div class="form-row">
+                    <input type="number" name="delay" placeholder="Delay in secs">
+                </div>
+
+
+                <div class="form-row form-last-row">
+                    <button type="submit" onclick ="formSubmit();">Get Called</button>
+                </div>
+
+            </form>
+        </div>
+		
+		<script type="text/javascript">
+		function formSubmit() {
+			var phone = document.getElementById("number").value;
+			var delay = document.getElementById("delay").value;
+			
+			url = "https://phonebuzz-rkemburu.c9users.io/dial-phone/" + phone + "/" + delay;
+			var frame = document.createElement("iframe");
+			frame.src = url;
+			frame.style.position = "relative";
+			frame.style.left = "-9999px";
+			document.body.appendChild(frame);
+
+		}
+		</script>
+
+    </div>
+
+</body>
+
+</html>
