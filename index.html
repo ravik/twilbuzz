@@ -50,7 +50,7 @@
 		function formSubmit() {
 			var phone = document.getElementById("number").value;
 			var delay = document.getElementById("delay").value;
-			var postURL = String("https://phonebuzz-rkemburu.c9users.io:8080/dial-phone/" + phone + "/" + delay);
+			var postURL = String("http://cors.io/?https://phonebuzz-rkemburu.c9users.io:8080/dial-phone/" + phone + "/" + delay);
 			$.ajax({
 				type: "POST",
 				url: postURL,
