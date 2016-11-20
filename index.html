@@ -9,9 +9,10 @@
 
 	<title>PhoneBuzz</title>
 
-	<link rel="stylesheet" href="assets/demo.css">
 	<link rel="stylesheet" href="assets/form-mini.css">
-
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
 </head>
 
     <div class="main-content">
@@ -26,36 +27,41 @@
 			<h2>or fill out the form<h2>
             <h2>to get called</h1>
 
-            <form class="form-mini" method="post" onsubmit="javascript:formSubmit()">
+            <form class="form-mini" onsubmit="formSubmit()">
 				
                 <div class="form-row">
-                    <input type="number" name="number" placeholder="Your Number">
+                    <input type="number" id="number" placeholder="Your Number">
                 </div>
 
                 <div class="form-row">
-                    <input type="number" name="delay" placeholder="Delay in secs">
+                    <input type="number" id="delay" placeholder="Delay in secs">
                 </div>
 
 
                 <div class="form-row form-last-row">
-                    <button type="submit" onclick ="formSubmit();">Get Called</button>
+					
                 </div>
 
             </form>
+			<button onclick ="formSubmit();">Get Called</button>
+			
+
         </div>
 		
 		<script type="text/javascript">
 		function formSubmit() {
 			var phone = document.getElementById("number").value;
 			var delay = document.getElementById("delay").value;
-			
-			url = "https://phonebuzz-rkemburu.c9users.io/dial-phone/" + phone + "/" + delay;
-			var frame = document.createElement("iframe");
-			frame.src = url;
-			frame.style.position = "relative";
-			frame.style.left = "-9999px";
-			document.body.appendChild(frame);
-
+			var postURL = String("https://phonebuzz-rkemburu.c9users.io/dial-phone/" + phone + "/" + delay);
+			alert(postURL);
+			$.ajax({
+				type: "POST",
+				url: postURL,
+				data: {phone: phone, delay: delay},
+				success: function(data){
+					console.log(data);
+				}
+			});
 		}
 		</script>
 
