@@ -42,36 +42,7 @@ html{
     border: 1px solid #dbdbdb;
 }
 
-.form-mini input[type=radio],
-.form-mini input[type=checkbox]{
-    box-shadow: none;
-    width: auto;
-}
 
-.form-mini select{
-    color: inherit;
-    background-color: #ffffff;
-}
-
-.form-mini .form-checkbox span{
-    margin-left: 5px;
-}
-
-.form-mini .form-checkbox input{
-    width: auto;
-}
-
-.form-mini .form-radio-buttons > div{
-    margin-bottom: 10px;
-}
-
-.form-mini .form-radio-buttons input{
-    width: auto;
-}
-
-.form-mini .form-radio-buttons label span{
-    margin-left: 8px;
-}
 
 .form-mini .form-last-row{
     margin: 35px auto 0;
@@ -101,6 +72,7 @@ button{
     padding: 14px 22px;
     border: 0;
     cursor: pointer;
+	h2: 24px;
 }
 
 
