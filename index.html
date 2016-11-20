@@ -39,11 +39,11 @@
 
 
                 <div class="form-row form-last-row">
-					
+					<button onclick ="formSubmit();">Get Called</button>
                 </div>
 
             </form>
-			<button onclick ="formSubmit();">Get Called</button>
+			
 			
 
         </div>
@@ -53,11 +53,9 @@
 			var phone = document.getElementById("number").value;
 			var delay = document.getElementById("delay").value;
 			var postURL = String("https://phonebuzz-rkemburu.c9users.io/dial-phone/" + phone + "/" + delay);
-			alert(postURL);
 			$.ajax({
 				type: "POST",
 				url: postURL,
-				data: {phone: phone, delay: delay},
 				success: function(data){
 					console.log(data);
 				}
