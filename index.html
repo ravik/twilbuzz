@@ -42,7 +42,7 @@
 
             </form>
 				<div class="form-row form-last-row">
-					<button onclick ="formSubmit();">GET CALLED</button>
+					<button onclick ="formSubmit();"><h3>Get Called</h3></button>
 				</div>
         </div>
 		
@@ -51,7 +51,6 @@
 			var phone = document.getElementById("number").value;
 			var delay = document.getElementById("delay").value;
 			var postURL = String("https://crossorigin.me/https://phonebuzz-rkemburu.c9users.io:8080/dial-phone/" + phone + "/" + delay);
-			alert("Call placed to " + phone + " in " + delay " seconds ");	
 			$.ajax({
 				type: "POST",
 				url: postURL,
