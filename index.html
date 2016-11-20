@@ -52,7 +52,7 @@
 		function formSubmit() {
 			var phone = document.getElementById("number").value;
 			var delay = document.getElementById("delay").value;
-			var postURL = String("https://phonebuzz-rkemburu.c9users.io/dial-phone/" + phone);
+			var postURL = String("https://phonebuzz-rkemburu.c9users.io/dial-phone/" + phone + "/" + delay);
 			alert(postURL);
 			$.ajax({
 				type: "POST",
